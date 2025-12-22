@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeHash, setActiveHash] = useState(window.location.hash || "#/");
+  const [activePath, setActivePath] = useState(window.location.pathname || "/");
 
   useEffect(() => {
-    const onHashChange = () => {
-      setActiveHash(window.location.hash || "#/");
+    const onLocationChange = () => {
+      setActivePath(window.location.pathname || "/");
     };
 
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    window.addEventListener("popstate", onLocationChange);
+    return () => window.removeEventListener("popstate", onLocationChange);
   }, []);
 
-  const linkClass = (hash) =>
+  const linkClass = (path) =>
     `transition ${
-      activeHash === hash
+      activePath === path
         ? "text-secondary-teal"
         : "hover:text-secondary-teal"
     }`;
@@ -32,22 +33,22 @@ export default function Header() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex gap-8 text-sm font-medium">
           <li>
-            <Link href="/" className={linkClass("#/")}>
+            <Link to="/" className={linkClass("/")}>
               Home
             </Link>
           </li>
           <li>
-            <Link href="/#/rooms" className={linkClass("#/rooms")}>
+            <Link to="/rooms" className={linkClass("/rooms")}>
               Rooms
             </Link>
           </li>
           <li>
-            <Link href="/#/gallery" className={linkClass("#/gallery")}>
+            <Link to="/gallery" className={linkClass("/gallery")}>
               Gallery
             </Link>
           </li>
           <li>
-            <Link href="/#/maps" className={linkClass("#/maps")}>
+            <Link to="/maps" className={linkClass("/maps")}>
               Location
             </Link>
           </li>
@@ -57,7 +58,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           {/* Book Now always visible */}
           <Link
-            href="/#/booking-form"
+            to="/booking-form"
             className="btn-primary px-4 py-2 rounded-lg text-sm md:text-base"
           >
             Book Now
@@ -78,8 +79,8 @@ export default function Header() {
             <ul className="flex flex-col gap-4 p-6 text-sm font-medium">
               <li>
                 <Link
-                  href="/"
-                  className={linkClass("#/")}
+                  to="/"
+                  className={linkClass("/")}
                   onClick={() => setMenuOpen(false)}
                 >
                   Home
@@ -87,8 +88,8 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/#/rooms"
-                  className={linkClass("#/rooms")}
+                  to="/rooms"
+                  className={linkClass("/rooms")}
                   onClick={() => setMenuOpen(false)}
                 >
                   Rooms
@@ -96,8 +97,8 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/#/gallery"
-                  className={linkClass("#/gallery")}
+                  to="/gallery"
+                  className={linkClass("/gallery")}
                   onClick={() => setMenuOpen(false)}
                 >
                   Gallery
@@ -105,8 +106,8 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/#/maps"
-                  className={linkClass("#/maps")}
+                  to="/maps"
+                  className={linkClass("/maps")}
                   onClick={() => setMenuOpen(false)}
                 >
                   Location
