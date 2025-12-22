@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Link } from 'react-router-dom';
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeHash, setActiveHash] = useState(window.location.hash || "#/");
@@ -32,36 +32,36 @@ export default function Header() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex gap-8 text-sm font-medium">
           <li>
-            <a href="/" className={linkClass("#/")}>
+            <Link href="/" className={linkClass("#/")}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#/rooms" className={linkClass("#/rooms")}>
+            <Link href="/#/rooms" className={linkClass("#/rooms")}>
               Rooms
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#/gallery" className={linkClass("#/gallery")}>
+            <Link href="/#/gallery" className={linkClass("#/gallery")}>
               Gallery
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#/maps" className={linkClass("#/maps")}>
+            <Link href="/#/maps" className={linkClass("#/maps")}>
               Location
-            </a>
+            </Link>
           </li>
         </ul>
 
         {/* Mobile actions */}
         <div className="flex items-center gap-4">
           {/* Book Now always visible */}
-          <a
+          <Link
             href="/#/booking-form"
             className="btn-primary px-4 py-2 rounded-lg text-sm md:text-base"
           >
             Book Now
-          </a>
+          </Link>
 
           {/* Hamburger */}
           <button
@@ -77,40 +77,40 @@ export default function Header() {
           <div className="absolute top-full left-0 w-full bg-primary-White border-t border-gray-200 shadow-md md:hidden">
             <ul className="flex flex-col gap-4 p-6 text-sm font-medium">
               <li>
-                <a
+                <Link
                   href="/"
                   className={linkClass("#/")}
                   onClick={() => setMenuOpen(false)}
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#/rooms"
                   className={linkClass("#/rooms")}
                   onClick={() => setMenuOpen(false)}
                 >
                   Rooms
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#/gallery"
                   className={linkClass("#/gallery")}
                   onClick={() => setMenuOpen(false)}
                 >
                   Gallery
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#/maps"
                   className={linkClass("#/maps")}
                   onClick={() => setMenuOpen(false)}
                 >
                   Location
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

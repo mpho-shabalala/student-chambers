@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <footer className="bg-primary-blue text-primary-White mt-20">
@@ -20,11 +22,11 @@ export default function Footer() {
         <section>
           <h4 className="text-primary-White mb-4">Explore</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="/" className="hover:underline text-gray-300">Home</a></li>
-            <li><a href="/#/rooms" className="hover:underline text-gray-300">Rooms</a></li>
-            <li><a href="/#/gallery" className="hover:underline text-gray-300">Gallery</a></li>
-            <li><a href="/#/maps" className="hover:underline text-gray-300">Location</a></li>
-            <li><a href="/#/booking-form" className="hover:underline text-gray-300">Book Now</a></li>
+            <li><Link to="/" className="hover:underline text-gray-300">Home</Link></li>
+            <li><Link to="/rooms" className="hover:underline text-gray-300">Rooms</Link></li>
+            <li><Link to="/gallery" className="hover:underline text-gray-300">Gallery</Link></li>
+            <li><Link to="/maps" className="hover:underline text-gray-300">Location</Link></li>
+            <li><Link to="/booking-form" className="hover:underline text-gray-300">Book Now</Link></li>
           </ul>
         </section>
 
@@ -32,10 +34,10 @@ export default function Footer() {
         <section>
           <h4 className="text-primary-White mb-4">Support</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="/#/faq" className="hover:underline text-gray-300">FAQ</a></li>
-            <li><a href="/#/contact" className="hover:underline text-gray-300">Contact Us</a></li>
-            <li><a href="/#/policies" className="hover:underline text-gray-300">House Rules</a></li>
-            <li><a href="/#/privacy-policy" className="hover:underline text-gray-300">Privacy Policy</a></li>
+            <li><Link to="/faq" className="hover:underline text-gray-300">FAQ</Link></li>
+            <li><Link to="/contact" className="hover:underline text-gray-300">Contact Us</Link></li>
+            <li><Link to="/policies" className="hover:underline text-gray-300">House Rules</Link></li>
+            <li><Link to="/privacy-policy" className="hover:underline text-gray-300">Privacy Policy</Link></li>
           </ul>
         </section>
 

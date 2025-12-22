@@ -1,3 +1,6 @@
+
+import { Link } from 'react-router-dom';
+
 export default function Hero() {
   return (
     <section
@@ -16,9 +19,9 @@ export default function Hero() {
           YOUR HOME NEAR CAMPUS
         </h1>
         <p className="text-primary-White mb-6 text-lg">Affordable, safe, and comfortable student accommodation designed for focused living.</p>
-        <a href="/#/rooms" className="btn-primary">
+        <Link href="/#/rooms" className="btn-primary">
           See Rooms
-        </a>
+        </Link>
       </div>
     </section>
   );
