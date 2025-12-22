@@ -1,15 +1,15 @@
-
-
-export default function SecondaryBTN({type, text, href, loading, handleSubmit}){
-    return (
-        <a
-            href={href}
-            type={type || ''}
-            onClick={loading ? undefined : handleSubmit}
-            className="bg-brand-purple w-full text-white md:text-brand-purple md:bg-white border border-brand-purple font-semibold  px-8 py-2 rounded-full md:w-fit text-2xl  text-center cursor-pointer"
-        >
-            {text}
-        </a>
-
-    )
+export default function SecondaryBTN({ type, text, href, loading, handleSubmit }) {
+  return (
+    <button
+      type={type || 'button'}
+      onClick={loading ? undefined : handleSubmit}
+      className={`w-full md:w-fit px-6 py-2 text-xl font-semibold rounded-lg transition 
+        ${loading 
+          ? 'bg-gray-400 text-white cursor-not-allowed' 
+          : 'bg-secondary-teal text-white hover:bg-secondary-teal-dark'}
+      `}
+    >
+      {loading ? 'Submitting...' : text}
+    </button>
+  )
 }

@@ -11,39 +11,30 @@ const DefaultIcon = L.icon({
   iconUrl,
   shadowUrl: iconShadow,
 });
+
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const location_coordinates = {
-    lat: -25.671927,
-    lng: 28.179294
-}
-
-export default function Map() {
-  return (<>
+export default function Map({coordinates, classname}) {
+  return (
+  <>
     <MapContainer
-      center={[location_coordinates.lat, location_coordinates.lng]}
+      center={[coordinates.lat, coordinates.lng]}
       zoom={13}
-      scrollWheelZoom={true}
-      style={{ height: "100vh", width: "100%" }}
+      scrollWheelZoom={false}
+      //style={{ height: "100vh", width: "100%" }}
+      className={`z-10 ${classname}`}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[51.505, -0.09]}>
+      <Marker position={[coordinates.lat, coordinates.lng]}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
       </Marker>
     </MapContainer>
-        <div>
-            <a href={`https://www.google.com/maps/dir/?api=1&destination=${location_coordinates.lat},${location_coordinates.lng}`}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Get location on google maps
-            </a>
-        </div>
+        
     </>
   );
 }

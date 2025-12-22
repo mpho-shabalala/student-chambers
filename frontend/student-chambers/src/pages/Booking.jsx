@@ -1,14 +1,13 @@
 import BookingForm from "../assets/components/shared/bookingForm";
+import Footer from "../assets/components/shared/Footer";
+import Header from "../assets/components/shared/Header";
 import Map from "../assets/components/shared/Map";
-import { BookingFormProvider } from "../contexts/BookingContext";
-
 export default function Booking() {
   return (
     <>
-        <BookingFormProvider>
-            <BookingForm/>
-            <Map/>
-        </BookingFormProvider>
+      <Header/>
+      <BookingForm/>
+      <Footer/>
     </>
   )
 }

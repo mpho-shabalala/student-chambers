@@ -1,8 +1,17 @@
-export default function Input({label_name,onChange, placeholder,name,value, type}){
+export default function Input({ label_name, onChange, placeholder, name, value, type = "text" }) {
     return (
         <div className="flex flex-col w-full">
-            <label className="text-brand-purple mb-4" htmlFor="name">{label_name}</label>
-            <input onChange={onChange} value={value} name={name} className="border-none rounded-full text-lg bg-gray-100 outline-1 outline-brand-purple px-4 py-2" placeholder={placeholder}></input>
+            <label className="text-brand-purple mb-2 font-semibold" htmlFor={name}>
+                {label_name}
+            </label>
+            <input
+                type={type}
+                name={name}
+                value={value}
+                onChange={onChange}
+                placeholder={placeholder}
+                className="bg-gray-100 rounded-lg px-4 py-2 text-lg border-none outline-none focus:outline-2 focus:outline-brand-purple transition"
+            />
         </div>
     )
 }
