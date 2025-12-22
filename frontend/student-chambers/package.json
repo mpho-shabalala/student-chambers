@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://mpho-shabalala.github.io/student-chambers",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

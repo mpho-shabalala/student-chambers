@@ -23,7 +23,7 @@ function App() {
           <GalleryProvider>
             <BookingFormProvider>
               
-      <HashRouter>
+      
         <ScrollToTop/>
         <Routes>
           <Route index element={<Homepage />} />
@@ -33,7 +33,7 @@ function App() {
           <Route path="maps" element={<MapPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-     </HashRouter>
+    
             
             </BookingFormProvider>
           </GalleryProvider>
