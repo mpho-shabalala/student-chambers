@@ -116,15 +116,15 @@ useEffect(() => {
                     <form className="space-y-6" onSubmit={handleSubmit}>
 
                         {/* Include your helper components without styling */}
-                        <Input name="name" value={formData.name} onChange={handleChange} type="text" label_name="Name" placeholder="John"/>
-                        <Input name="surname" value={formData.surname} onChange={handleChange} type="text" label_name="Surname" placeholder="Doe"/>
+                        <Input name="name" value={formData.name} onChange={handleChange} type="text" label_name="Name" placeholder="e.g.Bob"/>
+                        <Input name="surname" value={formData.surname} onChange={handleChange} type="text" label_name="Surname" placeholder="e.g.Doe"/>
                         <RadioInput name="gender" label_name="Gender" options={["Male","Female","Rather not say"]} value={formData.gender} onChange={handleChange}/>
                         <SearchableDropdownInput name="institution" label_name="Institution" options={["Boston","TUT","TVET COLLAGE","UP","UNISA","Other"]} value={formData.institution} onChange={handleChange}/>
                         <DropdownInput name="paymentMethod" label_name="Payment Method" options={["Bursary","Parents/Me","Other"]} placeholder="Select..." value={formData.paymentMethod} handleChange={handleChange}/>
                         <DropdownInput name="roomType" label_name="Room Type" options={["Single","Sharing","Single with en-suit","Sharing with en-suit"]} placeholder="Select..." value={formData.roomType} handleChange={handleChange}/>
-                        <Input name="phone" value={formData.phone} onChange={handleChange} type="text" label_name="Contact No." placeholder="+27 12 345 6789"/>
-                        <Input name="parentsPhone" value={formData.parentsPhone} onChange={handleChange} type="text" label_name="Parent/Guardian/Spouse/Next of Kin contact No." placeholder="+27 12 345 6789"/>
-                        <Input name="email" value={formData.email} onChange={handleChange} type="text" label_name="Email" placeholder="johndoe@example.com"/>
+                        <Input name="phone" value={formData.phone} onChange={handleChange} type="text" label_name="Contact No." placeholder="e.g.+27 12 345 6789"/>
+                        <Input name="parentsPhone" value={formData.parentsPhone} onChange={handleChange} type="text" label_name="Parent/Guardian/Spouse/Next of Kin contact No." placeholder="e.g.+27 12 345 6789"/>
+                        <Input name="email" value={formData.email} onChange={handleChange} type="text" label_name="Email" placeholder="e.g.johndoe@example.com"/>
 
                         <ReCAPTCHA className='pt-4' sitekey={'6LcHBx4sAAAAAFDjVAdmD-JiIeE24QmJB3cHOk0H'} onChange={setRecaptchaToken}/>
 

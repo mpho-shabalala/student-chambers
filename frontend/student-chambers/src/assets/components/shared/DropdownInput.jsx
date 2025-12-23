@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-export default function DropdownInput({ label, options, value, name, handleChange, placeholder }) {
+export default function DropdownInput({ label_name, options, value, name, handleChange, placeholder }) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef(null);
 
@@ -14,7 +14,7 @@ export default function DropdownInput({ label, options, value, name, handleChang
 
   return (
     <div className="flex flex-col w-full mb-4 relative" ref={containerRef}>
-      {label && <label className="text-gray-700 text-sm font-medium mb-2">{label}</label>}
+      {label_name && <label className="mb-2 font-semibold">{label_name}</label>}
 
       {/* Dropdown control */}
       <div

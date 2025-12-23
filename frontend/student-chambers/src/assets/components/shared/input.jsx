@@ -1,7 +1,7 @@
 export default function Input({ label_name, onChange, placeholder, name, value, type = "text" }) {
     return (
         <div className="flex flex-col w-full">
-            <label className="text-brand-purple mb-2 font-semibold" htmlFor={name}>
+            <label className="mb-2 font-semibold" htmlFor={name}>
                 {label_name}
             </label>
             <input

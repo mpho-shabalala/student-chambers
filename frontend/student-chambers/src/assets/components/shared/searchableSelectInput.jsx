@@ -29,7 +29,7 @@ export default function SearchableDropdownInput({
 
   return (
     <div className="flex flex-col w-full mb-4 relative" ref={containerRef}>
-      <label className="text-sm font-medium text-gray-700 mb-2">{label_name}</label>
+      <label className=" mb-2 font-semibold">{label_name}</label>
 
       <div
         className={`w-full bg-gray-100 rounded-lg px-4 py-2 cursor-pointer border border-gray-300 flex justify-between items-center ${open ? "ring-2 ring-blue-400" : ""}`}
