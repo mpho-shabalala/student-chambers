@@ -4,21 +4,95 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Student Chambers – Secure & Convenient Student Accommodation in Pretoria North</title>
+    <meta name="description" 
+    content="Student Chambers offers comfortable, secure, and conveniently located student accommodation near major colleges and university institutions in and around Pretoria North.">
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-/>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
 
-    <title>student-chambers</title>
+    <!-- ✅ Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Student Chambers",
+      "description": "Comfortable, secure, and conveniently located student accommodation designed for focused student living near major universities in Pretoria North.",
+      "url": "https://studentchambers.co.za/",
+      "logo": "https://studentchambers.co.za/assets/logo.png",
+      "image": [
+        "https://studentchambers.co.za/assets/gallery/exterior1.jpg",
+        "https://studentchambers.co.za/assets/gallery/room1.jpg"
+      ],
+      "telephone": "+27-11-123-4567",
+      "email": "info@studentchambers.co.za",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "329 Jan Van Riebeek Road",
+        "addressLocality": "Pretoria",
+        "addressRegion": "Gauteng",
+        "postalCode": "0001",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -25.7479,
+        "longitude": 28.2293
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday","Sunday"],
+          "opens": "10:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/studentchambers",
+        "https://www.instagram.com/studentchambers",
+        "https://www.linkedin.com/company/studentchambers"
+      ],
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Free Wi-Fi",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "24/7 Security",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Study rooms",
+          "value": true
+        },
+		 {
+          "@type": "LocationFeatureSpecification",
+          "name": "Entertainment",
+          "value": true
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-
   </body>
 </html>
