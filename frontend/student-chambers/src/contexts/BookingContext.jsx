@@ -70,7 +70,7 @@ const BookingFormProvider = ({ children }) => {
                         createdAt: serverTimestamp(),
                     }
                 );
-                setSuccess(true);
+            setSuccess(true);
 
         } catch (error) {
             setError(error);

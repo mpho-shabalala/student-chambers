@@ -34,6 +34,30 @@ export default function BookingForm() {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
     }
 
+    useEffect(() => {
+    if (loading) {
+        setStatus({ status: true, statusText: 'Submitting, please wait...' });
+    }
+}, [loading]);
+
+useEffect(() => {
+    if (success) {
+        setFormData({
+            name:'', surname:'', gender:'', institution:'', paymentMethod:'',
+            phone:'', parentsPhone:'', email:'', roomType:''
+        });
+        setRecaptchaToken(null);
+        setStatus({ status: true, statusText: 'Success! Your booking is submitted.' });
+    }
+}, [success]);
+
+useEffect(() => {
+    if (error) {
+        setStatus({ status: false, statusText: 'Failed to submit. Please try again.' });
+    }
+}, [error]);
+
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -53,18 +77,18 @@ export default function BookingForm() {
         const captchaUrl = 'https://us-central1-my-portfolio-637e8.cloudfunctions.net/api/verify-captcha';
         await submitForm({ formData: {...formData}, recaptchaToken, captchaUrl, collectionName: 'student-chambers-bookings' })
 
-        if (loading) setStatus({ status: true, statusText: 'Submitting, please wait...' })
+        // if (loading) setStatus({ status: true, statusText: 'Submitting, please wait...' })
 
-        if (success) {
-            setFormData({
-                name:'', surname:'', gender:'', institution:'', paymentMethod:'', 
-                phone:'', parentsPhone:'', email:'', roomType:''
-            })
-            setRecaptchaToken(null)
-            setStatus({ status: true, statusText: 'Success! Your booking is submitted.' })
-        } else {
-            setStatus({ status: false, statusText: 'Failed to submit. Please try again.' })
-        }
+        // if (success) {
+        //     setFormData({
+        //         name:'', surname:'', gender:'', institution:'', paymentMethod:'', 
+        //         phone:'', parentsPhone:'', email:'', roomType:''
+        //     })
+        //     setRecaptchaToken(null)
+        //     setStatus({ status: true, statusText: 'Success! Your booking is submitted.' })
+        // } else if(error) {
+        //     setStatus({ status: false, statusText: 'Failed to submit. Please try again.' })
+        // }
     }
 
     useEffect(() => {
